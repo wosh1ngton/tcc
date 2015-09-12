@@ -25,12 +25,14 @@ tarefa.setDataFinalizacao(Calendar.getInstance());
 EntityManagerFactory factory = Persistence.createEntityManagerFactory("tarefa");
 EntityManager manager = factory.createEntityManager();
 
-manager.getTransaction().begin();    
-manager.persist(tarefa);
-manager.getTransaction().commit();  
+//manager.getTransaction().begin();    
+//manager.persist(tarefa);
+//manager.getTransaction().commit();  
 
-System.out.println("ID da tarefa: " + tarefa.getId());
+//System.out.println("ID da tarefa: " + tarefa.getId());
+Tarefa encontrada = manager.find(Tarefa.class, 1L);
 
+System.out.println(encontrada.getDescricao());
 manager.close();
   }
 }
