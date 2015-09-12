@@ -5,10 +5,18 @@
  */
 package com.projeto.tcc;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author Woshington
  */
 public class GeraTabelas {
-    
+     public static void main(String[] args) {
+    EntityManagerFactory factory = Persistence.
+          createEntityManagerFactory("tarefa");
+
+    factory.close();
+  }
 }
